@@ -1,38 +1,6 @@
 
 let jhora = angular.module('aisales', ['ngRoute', 'ngMaterial', 'ngMessages']);
-jhora.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TABS, TOAST_DELAY, TOAST_POS) {
-  $scope.currentNavItem = '0';
-  $scope.navClosed = true;
-  $scope.tabs = TABS;
-  $rootScope.editMode = false;
-  $rootScope.editModeData = {};
-
-  $rootScope.template = $scope.tabs[0];
-  $scope.goto = function(page) {
-    $rootScope.template = $scope.tabs[page];
-    $scope.closeNav();
-  };
-
-  $scope.openNav = ()=> {
-    if($scope.navClosed){
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      $scope.navClosed = ! $scope.navClosed;
-    }else{
-      $scope.navClosed = ! $scope.navClosed;
-      $scope.closeNav();
-    }
-  };
-
-  $scope.closeNav = ()=>{
-    document.getElementById("mySidenav").style.width = "0px";
-    document.getElementById("main").style.marginLeft = "0px";
-  };
-
-  $scope.sortBy = (propertyName)=>{
-    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
-    $scope.propertyName = propertyName;
-  };
+jhora.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TOAST_DELAY, TOAST_POS) {
 
   $rootScope.showToast = (msg)=>{
       $mdToast.show($mdToast.simple().textContent(msg).position(TOAST_POS).hideDelay(TOAST_DELAY));
@@ -96,11 +64,7 @@ jhora.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog
 
 })
 .constant('TOAST_DELAY', 3000)
-.constant('TOAST_POS', 'bottom right')
-.constant('TABS', [
-  {title:'Add Customer',route:'/customers/add'},
-  {title:'Settings',route:'/setting'}
-]);
+.constant('TOAST_POS', 'bottom right');
 
 jhora.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider, $locationProvider) {
 
