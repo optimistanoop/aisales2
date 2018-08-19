@@ -11,6 +11,12 @@
    </head>
   <body ng-app="aisales" ng-controller="aisalesCtrl">
     <div  ng-include="'header.html'"> </div>
+    <main id="camera">
+      <video id="camera--view" autoplay playsinline></video>
+      <canvas id="camera--sensor"></canvas>
+      <img src="//:0" alt="" id="camera--output">
+      <button id="camera--trigger" ng-click="takePicture($event)">Take Pic</button>
+    </main>
     <div ng-view></div>
     <div  ng-include="'footer.html'"> </div>
     
