@@ -1,5 +1,5 @@
 'use strict'
-aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialog, $http, TOAST_DELAY, TOAST_POS) {
+aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialog, $http,$location, TOAST_DELAY, TOAST_POS) {
   
   // Define constants
   const cameraView = document.querySelector("#camera--view"),
@@ -20,7 +20,10 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
     cameraSensor.getContext("2d").clearRect(0, 0, cameraSensor.width, cameraSensor.height);
   }
   $rootScope.uploadStream = (ev)=>{
-    $http.get('data/login.json').then(data =>console.log(data.data))
+    $http.get('data/login.json').then((data) =>{
+      console.log(data.data)
+      $location.url('/menu');
+    })
   }
   $rootScope.stopStream = (ev)=>{
     $rootScope.track.stop();
