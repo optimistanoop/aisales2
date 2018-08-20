@@ -1,5 +1,5 @@
-<div id="menu-content" class="_1hM1R znxoh">
-   <div class="_1okhE">
+<div id="menu-content" class="_1hM1R znxoh" ng-controller="menu">
+  <div class="_1okhE">
       <div class="_1srfG">
          <div class="_2mKMa">
             <div class="_1JVzD">
@@ -37,344 +37,58 @@
       </div>
       <div class="_1J_la">
          <div id="h-1950595611" class="_2dS-v">
-            <h2 class="M_o7R _27PKo">Recommended</h2>
+            <h2 class="M_o7R _27PKo" >Recommended</h2>
             <div class="Yu6Bn">
-               26<!-- --> <!-- -->items
+               {{menuItems.length}}<!-- --> <!-- -->items
             </div>
-            <div class="_1bGRc">
-               <div class="_2J3sY">
+            <div class="_1bGRc"  ng-repeat="item in menuItems" >
+               <div class="_2J3sY" ng-show="$odd">
                   <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
                      <div class="Qfuib">
-                        <img src="images/smoky.png" height="160" width="244" alt=""/>
+                        <img src={{item.img}} height="160" width="244" alt=""/>
                         <span class="_3fVLa"></span>
                         <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Buy 6pc Smoky Grilled &amp; Get 3pc Free! Offer only for Fridays.</div>
+                           <div class="_2aOqz _1d7fc">{{item.message}}</div>
                         </div>
-                        <div style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _1bfQ9"><span class="_23BlT" style="border-color:#b02331 #b02331 transparent transparent"></span>MUST TRY<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
+                        <div ng-if="item.caption" style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _1bfQ9"><span class="_23BlT" style="border-color:#b02331 #b02331 transparent transparent"></span>{{item.caption}}<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
                      </div>
                      <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
                      <div class="_2tcDp">
                         <div>
                            <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">Smoky Grilled 6+3 (Friday Offer)</div>
-                              <div class="HwSGt">Chicken</div>
+                              <div class="_2SyqU" itemProp="name">{{item.itemName}}</div>
+                              <div class="HwSGt">{{item.type}}</div>
                            </div>
                         </div>
                      </div>
                      <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">501</span></div>
+                        <div class="_12lpv _3WiZC"><span class="bQEAj">{{item.price}}</span></div>
+                        <div class="_33Hf_ _3L1X9"><div class="_1RPOp">ADD</div><div class="_1ds9T _2WdfZ _4aKW6">+</div><div class="_29Y5Z _20vNm _4aKW6"></div><div class="_2zAXs _2quy- _4aKW6">0</div></div>
                      </div>
                   </div>
                </div>
-               <div class="_2J3sY">
+               <div class="_2J3sY" ng-show="$even">
                   <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
                      <div class="Qfuib">
-                        <img src="images/8pc.png" height="160" width="244" alt=""/>
+                        <img src={{item.img}} height="160" width="244" alt=""/>
                         <span class="_3fVLa"></span>
                         <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">A big bucket for buddies who like to share. 8 pieces of Colonel&#x27;s signature Hot &amp; Crispy.</div>
+                           <div class="_2aOqz _1d7fc">{{item.message}}</div>
                         </div>
+                        <div ng-if="item.caption" style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _1bfQ9"><span class="_23BlT" style="border-color:#b02331 #b02331 transparent transparent"></span>{{item.caption}}<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
                      </div>
                      <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
                      <div class="_2tcDp">
                         <div>
                            <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">8 Pc Hot &amp; Crispy*</div>
-                              <div class="HwSGt">Chicken</div>
+                              <div class="_2SyqU" itemProp="name">{{item.itemName}}</div>
+                              <div class="HwSGt">{{item.type}}</div>
                            </div>
                         </div>
                      </div>
                      <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">600</span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="_1bGRc">
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/mingle.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Spicy wings with juicy strips. Dive into our classics with this bucket of 3pc Boneless Strips + 6pc Hot Wings</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">Mingles Bucket*</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">238</span></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/6pc.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">It&#x27;s always fun to binge on the classics! 6 pieces of Colonel&#x27;s signature Hot &amp; Crispy.</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">6 Pc Hot &amp; Crispy*</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">500</span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="_1bGRc">
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/12pc.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">12 tender, juicy Boneless strips with a spread of 4 signature KFC dips. For the &quot;big dippers&quot;.</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">Dips Bucket - 12 Pcs*</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">457</span></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/4pc_smoky.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Making a meal? Add a side of Colonel&#x27;s signature Smoky Grilled.</div>
-                        </div>
-                        <div style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _1bfQ9"><span class="_23BlT" style="border-color:#b02331 #b02331 transparent transparent"></span>MUST TRY<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">4 Pc Smoky Grilled</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">343</span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="_1bGRc">
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/6pc_smoky.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">When in a fix, just go for 6! The perfect shareable bucket with 6 of KFC&#x27;s signature Smoky Grilled.</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">6 Pc Smoky Grilled</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">501</span></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/4pc_hot.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Ask for four more! 4 pieces of Colonel&#x27;s signature Hot &amp; Crispy chicken.</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">4 Pc Hot &amp; Crispy*</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">343</span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="_1bGRc">
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/8pc_smoky.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Share a smoky secret or two over this crowd-pleasing bucket with 8 of KFC&#x27;s signature Smoky Grilled.</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">8 Pc Smoky Grilled</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">600</span></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/2pc_hot.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">The perfect crunch-time snack! 2 pieces of Colonel&#x27;s signature Hot &amp; Crispy.</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">2 Pc Hot &amp; Crispy*</div>
-                              <div class="HwSGt">Chicken</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">180</span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="_1bGRc">
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/longer.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">When life falls short, go long! KFC&#x27;s brand-new edition for veggie lovers, easy on the belly and the pocket!</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ _3x58u"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">Veg Longer.</div>
-                              <div class="HwSGt">Burgers</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">63</span></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/zinger.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Colonel&#x27;s signature Zinger chicken, an extra crispy fillet packed in soft corn bun with lettuce &amp; mayo!</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">Chicken Zinger.</div>
-                              <div class="HwSGt">Burgers</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">143</span></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="_1bGRc">
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/1pc_hot.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Crispy on the outside, juicy on the inside, our signature Hot&amp; Crispy. A cracking addition to any meal!</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">1 Pc Hot &amp; Crispy*</div>
-                              <div class="HwSGt">Snacks</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">95</span></div>
-                     </div>
-                  </div>
-               </div>
-               <div class="_2J3sY">
-                  <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
-                     <div class="Qfuib">
-                        <img src="images/4pc_hot.png" height="160" width="244" alt=""/>
-                        <span class="_3fVLa"></span>
-                        <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">Ask for four more! 4 pieces of Colonel&#x27;s signature Hot &amp; Crispy chicken.</div>
-                        </div>
-                     </div>
-                     <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
-                     <div class="_2tcDp">
-                        <div>
-                           <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">4 Pc Hot &amp; Crispy*</div>
-                              <div class="HwSGt">Snacks</div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">343</span></div>
+                        <div class="_12lpv _3WiZC"><span class="bQEAj">{{item.price}}</span></div>
+                        <div class="_33Hf_ _3L1X9"><div class="_1RPOp">ADD</div><div class="_1ds9T _2WdfZ _4aKW6">+</div><div class="_29Y5Z _20vNm _4aKW6"></div><div class="_2zAXs _2quy- _4aKW6">0</div></div>
                      </div>
                   </div>
                </div>
@@ -1216,29 +930,92 @@
          </div>
       </div>
    </div>
-   <div class="_5ZwHn">
-      <div class="_13V5d">
-         <div>
-            <div class="z66sN"></div>
-            <div class="X17mX">
-               <div class="_1A8Jq"></div>
-               <div class="_2kt6U"></div>
-               <div class="_1ZDO5"></div>
+  <div class="_5ZwHn">
+    <div class="_1WKwn">
+      <div class="_2uq6N">
+         Cart
+         <div class="_1XFmX">4 Items</div>
+      </div>
+      <div class="_1t-Al _1XUXj">
+         <div class="_3YMqW"></div>
+         <div class="_2ObNr _2Y5ZT _2qOpI">
+            <div>
+               <div class="_2zsON"></div>
+               <div class="">
+                  <div class="_2bXOy">
+                     <div class="_2MJB6"><span class="icon-foodSymbol "></span></div>
+                     <div class="_33KRy">Spaghetti Aglio Olio</div>
+                     <div class="_2bWmk">
+                        <div class="_1yTZI">
+                           <div class="_29ugw _3L1X9">
+                              <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
+                              <div class="_1ds9T">+</div>
+                              <div class="_29Y5Z"></div>
+                              <div class="_2zAXs">1</div>
+                           </div>
+                           <div class="_1mx0r"><span class="_2W2U4">239</span></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="_2bXOy">
+                     <div class="_2MJB6"><span class="icon-foodSymbol "></span></div>
+                     <div class="_33KRy">Pind Di Daal Makhani with Jeera Rice</div>
+                     <div class="_2bWmk">
+                        <div class="_1yTZI">
+                           <div class="_29ugw _3L1X9">
+                              <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
+                              <div class="_1ds9T">+</div>
+                              <div class="_29Y5Z"></div>
+                              <div class="_2zAXs">1</div>
+                           </div>
+                           <div class="_1mx0r"><span class="_2W2U4">209</span></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="_2bXOy">
+                     <div class="_2MJB6"><span class="icon-foodSymbol _1F50F"></span></div>
+                     <div class="_33KRy">Cajun Spiced Rice with Chicken Nuggets</div>
+                     <div class="_2bWmk">
+                        <div class="_1yTZI">
+                           <div class="_29ugw _3L1X9">
+                              <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
+                              <div class="_1ds9T">+</div>
+                              <div class="_29Y5Z"></div>
+                              <div class="_2zAXs">1</div>
+                           </div>
+                           <div class="_1mx0r"><span class="_2W2U4">249</span></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="_2bXOy">
+                     <div class="_2MJB6"><span class="icon-foodSymbol _1F50F"></span></div>
+                     <div class="_33KRy">Teriyaki Chicken with Hakka Noddles</div>
+                     <div class="_2bWmk">
+                        <div class="_1yTZI">
+                           <div class="_29ugw _3L1X9">
+                              <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
+                              <div class="_1ds9T">+</div>
+                              <div class="_29Y5Z"></div>
+                              <div class="_2zAXs">1</div>
+                           </div>
+                           <div class="_1mx0r"><span class="_2W2U4">229</span></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="_3DPdG"></div>
             </div>
-            <div class="X17mX">
-               <div class="_1A8Jq"></div>
-               <div class="_2kt6U"></div>
-               <div class="_1ZDO5"></div>
-            </div>
-            <div class="X17mX">
-               <div class="_1A8Jq"></div>
-               <div class="_2kt6U"></div>
-               <div class="_1ZDO5"></div>
-            </div>
-            <div class="sM8vU"></div>
-            <div class="_2sMEb"></div>
          </div>
+         <div class="_1v28S _2Cjz6"></div>
+      </div>
+      <div class="EEeV3">
+         <div class="_161V3">
+            <div class="_1DWmI">Subtotal</div>
+            <div><span class="QK9kr">₹ 926</span><span>₹ 787</span></div>
+         </div>
+         <div class="_26NCu">Extra charges may apply</div>
+         <div class="_1gPB7">Checkout →</div>
       </div>
    </div>
-</div>
+  </div>
 </div>

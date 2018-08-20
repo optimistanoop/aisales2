@@ -99,13 +99,13 @@ aisales.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider
   };
   $routeProvider
       .when("/", {
-          templateUrl : 'menu.html'
+          templateUrl : 'menu/menu.html'
       })
       .when("/setting", {
-          templateUrl : 'menu.html'
+          templateUrl : 'menu/menu.html'
       })
       .when("/cart", {
-          templateUrl : 'cart.html'
+          templateUrl : 'cart/cart.html'
       });
       $locationProvider.hashPrefix('!');
       $locationProvider.html5Mode({enabled: false, requireBase: false});

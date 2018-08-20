@@ -7639,7 +7639,7 @@ input::-ms-clear {
 ._5ZwHn {
 	width: 298px;
 	padding: 26px 10px 0;
-	height: calc(100vh - 392px);
+	height: calc(100vh - 100px);
 	transition: height .4s ease;
 	contain: layout
 }
