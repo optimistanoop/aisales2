@@ -42,8 +42,9 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
       let p =new Promise( (resolve, reject)=>{
           $mdDialog.show({
               controller: ($scope, $mdDialog)=>{
-                  $scope.message = msg,
-                  $scope[modelName] = data;
+                
+                // default camera 
+
                   $scope.answer = function(answer) {
                       $mdDialog.hide(answer);
                   };
@@ -99,6 +100,9 @@ aisales.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider
   };
   $routeProvider
       .when("/", {
+          templateUrl : 'camera.html'
+      })
+      .when("/menu", {
           templateUrl : 'menu/menu.html'
       })
       .when("/setting", {
