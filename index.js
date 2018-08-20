@@ -1,6 +1,6 @@
 
-let jhora = angular.module('aisales', ['ngRoute', 'ngMaterial', 'ngMessages']);
-jhora.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TOAST_DELAY, TOAST_POS) {
+let aisales = angular.module('aisales', ['ngRoute', 'ngMaterial', 'ngMessages']);
+aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TOAST_DELAY, TOAST_POS) {
 
   $rootScope.showToast = (msg)=>{
       $mdToast.show($mdToast.simple().textContent(msg).position(TOAST_POS).hideDelay(TOAST_DELAY));
@@ -67,7 +67,7 @@ jhora.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog
 .constant('TOAST_DELAY', 3000)
 .constant('TOAST_POS', 'bottom right');
 
-jhora.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider, $locationProvider) {
+aisales.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider, $locationProvider) {
 
   $mdThemingProvider.theme('docs-dark', 'default').primaryPalette('yellow') .dark();
   $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
@@ -103,13 +103,13 @@ jhora.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider, 
           templateUrl : 'camera.html'
       })
       .when("/menu", {
-          templateUrl : 'menu.html'
-      })
-      .when("/cart", {
-          templateUrl : 'cart.html'
+          templateUrl : 'menu/menu.html'
       })
       .when("/setting", {
-          templateUrl : 'menu.html'
+          templateUrl : 'menu/menu.html'
+      })
+      .when("/cart", {
+          templateUrl : 'cart/cart.html'
       });
       $locationProvider.hashPrefix('!');
       $locationProvider.html5Mode({enabled: false, requireBase: false});
