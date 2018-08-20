@@ -1,5 +1,5 @@
 
-jhora.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TOAST_DELAY, TOAST_POS) {
+aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TOAST_DELAY, TOAST_POS) {
 
 
   $scope.openCamera = (ev)=>{
