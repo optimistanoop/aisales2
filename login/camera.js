@@ -22,6 +22,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
   $rootScope.uploadStream = (ev)=>{
     $http.get('data/login.json').then((data) =>{
       console.log(data.data)
+      $rootScope.menudata = data.data;
       $location.url('/menu');
     })
   }

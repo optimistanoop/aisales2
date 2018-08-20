@@ -15,4 +15,9 @@ aisales.controller('menu',function ($scope,$rootScope) {
     {id:13,img:"images/1pc_hot.png",message:`Crispy on the outside, juicy on the inside, our signature Hot & Crispy. A cracking addition to any meal!`,caption:"",itemName:"1 Pc Hot & Crispy*",type:"Snacks",price:95},
     {id:14,img:"images/4pc_hot.png",message:`Ask for four more! 4 pieces of Colonel's signature Hot & Crispy chicken.`,caption:"",itemName:`4 Pc Hot & Crispy*`,type:"Chicken",price:343}
   ]
+  
+  
+  
+  
+  
 })
