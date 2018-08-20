@@ -60,8 +60,8 @@
             <div class="Yu6Bn">
                {{menuItems.length}}<!-- --> <!-- -->items
             </div>
-            <div class="_1bGRc"  ng-repeat="item in menuItems" >
-               <div class="_2J3sY" ng-show="$odd">
+            <div class="_1bGRc"  ng-repeat="item in menuItems" ng-if="$even" >
+               <div class="_2J3sY" >
                   <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
                      <div class="Qfuib">
                         <img src={{item.img}} height="160" width="244" alt=""/>
@@ -86,27 +86,27 @@
                      </div>
                   </div>
                </div>
-               <div class="_2J3sY" ng-show="$even">
+               <div class="_2J3sY">
                   <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
                      <div class="Qfuib">
-                        <img src={{item.img}} height="160" width="244" alt=""/>
+                        <img src="{{menuItems[$index + 1].img}}" height="160" width="244" alt=""/>
                         <span class="_3fVLa"></span>
                         <div class="_2NaIR">
-                           <div class="_2aOqz _1d7fc">{{item.message}}</div>
+                           <div class="_2aOqz _1d7fc">{{menuItems[$index + 1].message}}</div>
                         </div>
-                        <div ng-if="item.caption" style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _1bfQ9"><span class="_23BlT" style="border-color:#b02331 #b02331 transparent transparent"></span>{{item.caption}}<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
+                        <div ng-if="menuItems[$index+1].caption" style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _1bfQ9"><span class="_23BlT" style="border-color:#b02331 #b02331 transparent transparent"></span>{{menuItems[$index+1].caption}}<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
                      </div>
                      <span class="icon-foodSymbol tKOaB _3h2yZ"></span>
                      <div class="_2tcDp">
                         <div>
                            <div class="ft_i6">
-                              <div class="_2SyqU" itemProp="name">{{item.itemName}}</div>
-                              <div class="HwSGt">{{item.type}}</div>
+                              <div class="_2SyqU" itemProp="name">{{menuItems[$index+1].itemName}}</div>
+                              <div class="HwSGt">{{menuItems[$index+1].type}}</div>
                            </div>
                         </div>
                      </div>
                      <div class="JWyJG">
-                        <div class="_12lpv _3WiZC"><span class="bQEAj">{{item.price}}</span></div>
+                        <div class="_12lpv _3WiZC"><span class="bQEAj">{{menuItems[$index+1].price}}</span></div>
                         <div class="_33Hf_ _3L1X9"><div class="_1RPOp">ADD</div><div class="_1ds9T _2WdfZ _4aKW6">+</div><div class="_29Y5Z _20vNm _4aKW6"></div><div class="_2zAXs _2quy- _4aKW6">0</div></div>
                      </div>
                   </div>
