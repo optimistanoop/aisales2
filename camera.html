@@ -1,8 +1,6 @@
-<main id="camera">
+<main id="camera" ng-controller="cameraCtrl">
   <video id="camera--view" autoplay playsinline></video>
   <canvas id="camera--sensor"></canvas>
   <img src="//:0" alt="" id="camera--output">
   <button id="camera--trigger" ng-click="takePicture($event)">Take a picture</button>
 </main>
-
-<!-- <button id="camera--trigger" ng-click="takePicture($event)">Take a picture</button> -->
