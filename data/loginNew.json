@@ -1,0 +1,10 @@
+{
+  "status" : 200,
+  "name" :"Anoop",
+  "age":29,
+  "sex":"male",
+  "recommendedFood" :[],
+  "lastOrderd":[],
+  "faceId":"",
+  "timestamp":""
+}

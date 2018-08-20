@@ -1,0 +1,11 @@
+<div ng-controller="cameraCtrl">  
+  <main id="camera" >
+    <video id="camera--view" autoplay playsinline></video>
+    <canvas id="camera--sensor"></canvas>
+    <img src="//:0" alt="" id="camera--output">
+  </main>
+  <button id="camera--trigger" ng-click="takePicture($event)" ng-if="showTakePicture">{{takePicName}}</button>
+  <button  ng-click="stopStream($event)" ng-if="showStopCamera">Stop camera</button>
+  <button  ng-click="cancelStream($event)" ng-if="showStopCamera">Cancel</button>
+  <button  ng-click="uploadStream($event)" ng-if="showStopCamera">Upload</button>
+</div>

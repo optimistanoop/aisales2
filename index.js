@@ -2,6 +2,7 @@
 let aisales = angular.module('aisales', ['ngRoute', 'ngMaterial', 'ngMessages']);
 aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TOAST_DELAY, TOAST_POS) {
 
+  
   $rootScope.showToast = (msg)=>{
       $mdToast.show($mdToast.simple().textContent(msg).position(TOAST_POS).hideDelay(TOAST_DELAY));
   };
@@ -100,12 +101,12 @@ aisales.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider
   };
   $routeProvider
       .when("/", {
-          templateUrl : 'camera.html'
+          templateUrl : 'home.html'
+      })
+      .when("/signin", {
+          templateUrl : 'login/camera.html'
       })
       .when("/menu", {
-          templateUrl : 'menu/menu.html'
-      })
-      .when("/setting", {
           templateUrl : 'menu/menu.html'
       })
       .when("/cart", {
