@@ -1,21 +1,5 @@
-<div class="_2e0fx">
-   <div class="LrkrN">
-      <div class="_1g_1a">
-         <div class="_2Epw9 ">
-            <span class="_2JnGH icon-heartInverse">
-               <div style="display:none" class="TQcBQ icon-heart zSo2a"></div>
-            </span>
-            <span class="_2FDKw">Favourite</span>
-         </div>
-         <label>
-            <div class="_31C1x _2C8Ic _22URe">
-               <span class="_17CQa">
-         <label class="b5XpK _2cl4v _1Q69C"><input type="checkbox" class="_1WnJw"/><span class="_1X1xw _3ucsV"></span><svg width="16" class="_2m7ny" viewBox="0 0 24 24"><path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M9.5,18.25 L20.75,7.43269231 L19,5.75 L9.5,14.8846154 L5,10.5576923 L3.25,12.2403846 L9.5,18.25 Z"></path></svg></label></span><span class="_1KYwd">Veg Only</span></div></label>
-         <div class="_3d2Yn "><span class="_2QyU3 icon-magnifier"></span><span class="_1JjHr"><input type="text" class="_5mXmk" placeholder="Search for dishes..." value=""/></span><span class="_38kfh icon-close-thin"></span></div>
-      </div>
-   </div>
-</div>
-</div>
+
+
 
 <div id="menu-content" class="_1hM1R znxoh" ng-controller="menu">
   <div class="_1okhE">
@@ -60,7 +44,7 @@
             <div class="Yu6Bn">
                {{menuItems.length}}<!-- --> <!-- -->items
             </div>
-            <div class="_1bGRc"  ng-repeat="item in menuItems" ng-if="$even" >
+            <div class="_1bGRc"  ng-repeat="item in menuItems | filter:$ctrl.query" ng-if="$even" >
                <div class="_2J3sY" >
                   <div class="_2IEoD" itemscope="" itemType="http://schema.org/MenuItem">
                      <div class="Qfuib">
@@ -82,7 +66,7 @@
                      </div>
                      <div class="JWyJG">
                         <div class="_12lpv _3WiZC"><span class="bQEAj">{{item.price}}</span></div>
-                        <div class="_33Hf_ _3L1X9"><div class="_1RPOp">ADD</div><div class="_1ds9T _2WdfZ _4aKW6">+</div><div class="_29Y5Z _20vNm _4aKW6"></div><div class="_2zAXs _2quy- _4aKW6">0</div></div>
+                        <div class="_33Hf_ _3L1X9"><div class="_1RPOp" ng-click="addTocart(item)">ADD</div><div class="_1ds9T _2WdfZ _4aKW6">+</div><div class="_29Y5Z _20vNm _4aKW6"></div><div class="_2zAXs _2quy- _4aKW6">0</div></div>
                      </div>
                   </div>
                </div>
@@ -107,7 +91,7 @@
                      </div>
                      <div class="JWyJG">
                         <div class="_12lpv _3WiZC"><span class="bQEAj">{{menuItems[$index+1].price}}</span></div>
-                        <div class="_33Hf_ _3L1X9"><div class="_1RPOp">ADD</div><div class="_1ds9T _2WdfZ _4aKW6">+</div><div class="_29Y5Z _20vNm _4aKW6"></div><div class="_2zAXs _2quy- _4aKW6">0</div></div>
+                        <div class="_33Hf_ _3L1X9"><div class="_1RPOp" ng-click="addTocart(menuItems[$index+1])">ADD</div><div class="_1ds9T _2WdfZ _4aKW6">+</div><div class="_29Y5Z _20vNm _4aKW6"></div><div class="_2zAXs _2quy- _4aKW6">0</div></div>
                      </div>
                   </div>
                </div>
@@ -125,6 +109,7 @@
                      <div class="GaqmA">
                         <div>
                            <div class="_19GqV">
+                             <div class="_1RPOp">ADD</div>
                               <div class="_2Gojq">
                                  <div class="jTy8b" itemProp="name">Triple Treat.</div>
                                  <div style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _22D_E">MUST TRY<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
@@ -142,6 +127,7 @@
                      <div class="GaqmA">
                         <div>
                            <div class="_19GqV">
+                             <div class="_1RPOp">ADD</div>
                               <div class="_2Gojq">
                                  <div class="jTy8b" itemProp="name">5 in 1 Krunchy Box</div>
                               </div>
@@ -158,6 +144,7 @@
                      <div class="GaqmA">
                         <div>
                            <div class="_19GqV">
+                             <div class="_1RPOp">ADD</div>
                               <div class="_2Gojq">
                                  <div class="jTy8b" itemProp="name">Big 8</div>
                                  <div style="background-color:#d53d4c;color:#ffffff" class="_2FMT0 _22D_E">MUST TRY<span style="border-color:#d53d4c transparent #d53d4c transparent" class="rZ-gh"></span></div>
@@ -949,11 +936,11 @@
          </div>
       </div>
    </div>
-  <div class="_5ZwHn">
+  <div class="_5ZwHn" ng-if="cartData.items.length">
     <div class="_1WKwn">
       <div class="_2uq6N">
          Cart
-         <div class="_1XFmX">4 Items</div>
+         <div class="_1XFmX">{{cartData.items.length}} Items</div>
       </div>
       <div class="_1t-Al _1XUXj">
          <div class="_3YMqW"></div>
@@ -961,63 +948,18 @@
             <div>
                <div class="_2zsON"></div>
                <div class="">
-                  <div class="_2bXOy">
+                  <div class="_2bXOy" ng-repeat="c in cartData.items track by $index">
                      <div class="_2MJB6"><span class="icon-foodSymbol "></span></div>
-                     <div class="_33KRy">Spaghetti Aglio Olio</div>
+                     <div class="_33KRy">{{c.itemName}}</div>
                      <div class="_2bWmk">
                         <div class="_1yTZI">
-                           <div class="_29ugw _3L1X9">
+                           <!-- <div class="_29ugw _3L1X9">
                               <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
                               <div class="_1ds9T">+</div>
                               <div class="_29Y5Z"></div>
                               <div class="_2zAXs">1</div>
-                           </div>
-                           <div class="_1mx0r"><span class="_2W2U4">239</span></div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="_2bXOy">
-                     <div class="_2MJB6"><span class="icon-foodSymbol "></span></div>
-                     <div class="_33KRy">Pind Di Daal Makhani with Jeera Rice</div>
-                     <div class="_2bWmk">
-                        <div class="_1yTZI">
-                           <div class="_29ugw _3L1X9">
-                              <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
-                              <div class="_1ds9T">+</div>
-                              <div class="_29Y5Z"></div>
-                              <div class="_2zAXs">1</div>
-                           </div>
-                           <div class="_1mx0r"><span class="_2W2U4">209</span></div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="_2bXOy">
-                     <div class="_2MJB6"><span class="icon-foodSymbol _1F50F"></span></div>
-                     <div class="_33KRy">Cajun Spiced Rice with Chicken Nuggets</div>
-                     <div class="_2bWmk">
-                        <div class="_1yTZI">
-                           <div class="_29ugw _3L1X9">
-                              <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
-                              <div class="_1ds9T">+</div>
-                              <div class="_29Y5Z"></div>
-                              <div class="_2zAXs">1</div>
-                           </div>
-                           <div class="_1mx0r"><span class="_2W2U4">249</span></div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="_2bXOy">
-                     <div class="_2MJB6"><span class="icon-foodSymbol _1F50F"></span></div>
-                     <div class="_33KRy">Teriyaki Chicken with Hakka Noddles</div>
-                     <div class="_2bWmk">
-                        <div class="_1yTZI">
-                           <div class="_29ugw _3L1X9">
-                              <div class="_1RPOp _36fT9 _4aKW6">ADD</div>
-                              <div class="_1ds9T">+</div>
-                              <div class="_29Y5Z"></div>
-                              <div class="_2zAXs">1</div>
-                           </div>
-                           <div class="_1mx0r"><span class="_2W2U4">229</span></div>
+                           </div> -->
+                           <div class="_1mx0r"><span class="_2W2U4">{{c.price}}</span></div>
                         </div>
                      </div>
                   </div>
@@ -1030,10 +972,13 @@
       <div class="EEeV3">
          <div class="_161V3">
             <div class="_1DWmI">Subtotal</div>
-            <div><span class="QK9kr">₹ 926</span><span>₹ 787</span></div>
+            <div>
+              <!-- <span class="QK9kr">₹ 926</span> -->
+              <span>₹ {{cartData.total}}</span>
+            </div>
          </div>
          <div class="_26NCu">Extra charges may apply</div>
-         <div class="_1gPB7">Checkout →</div>
+         <div class="_1gPB7" ng-click="checkout($event)">Checkout →</div>
       </div>
    </div>
   </div>

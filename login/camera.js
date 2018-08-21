@@ -59,6 +59,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
             console.error("Oops. Something is broken.", error);
           });
   }
+  
   // Take a picture when cameraTrigger is tapped
   // Start the video stream when the window loads
   //window.addEventListener("load", cameraStart, false);
