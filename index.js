@@ -28,6 +28,8 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
       $rootScope.setCookie('username', $rootScope.menudata.name, 15);
       $rootScope.signIn = 'Log out';
       $location.url('/menu');
+      $rootScope.track.stop();
+      $rootScope.cameraStream.stop();
     })
   }
   

@@ -1,8 +1,7 @@
 <div ng-controller="cameraCtrl">  
   <md-button class="md-warn md-raised md-hue-2" id="camera--trigger" ng-click="takePicture($event)" ng-if="showTakePicture">{{takePicName}}</md-button>
    <md-button class="md-warn md-raised md-hue-2" ng-click="stopStream($event)" ng-if="showStopCamera">Stop camera</md-button>
-   <md-button class="md-warn md-raised md-hue-2" ng-click="cancelStream($event)" ng-if="showStopCamera">Cancel</md-button>
-   <md-button class="md-warn md-raised md-hue-2" ng-click="uploadStream($event)" ng-if="showStopCamera">Upload</md-button>
+   <md-button class="md-warn md-raised md-hue-2" ng-click="uploadStream($event)" ng-if="showStopCamera">OK</md-button>
   <main id="camera" >
     <video id="camera--view" autoplay playsinline></video>
     <canvas id="camera--sensor"></canvas>

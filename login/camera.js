@@ -24,6 +24,8 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
     $rootScope.track.stop();
     $scope.showStopCamera = false;
     $scope.showTakePicture = false;
+    video.pause();
+    $rootScope.cameraStream.stop();
   }
   
   $scope.openCamera = (ev)=>{
@@ -47,6 +49,8 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
             $scope.showStopCamera = true;
             $rootScope.track = stream.getTracks()[0];
             cameraView.srcObject = stream;
+            $rootScope.cameraStream = stream;
+            video.src = window.URL.createObjectURL(stream);
           })
   }
   
@@ -65,7 +69,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
     }
     
     if($rootScope.signIn == 'Sign In') {
-      $scope.cameraStart().then((data) =>{ $scope.showTakePicture = true}).catch(error => console.error("Oops. Something is broken.", error));
+      $scope.cameraStart().then((data) =>{ $scope.showTakePicture = true;}).catch(error => console.error("Oops. Something is broken.", error));
 
     }else{
       $rootScope.logout();
