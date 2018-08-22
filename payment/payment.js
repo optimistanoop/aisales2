@@ -8,4 +8,10 @@ aisales.controller('paymentCtrl',function ($scope,$rootScope, $location) {
   $scope.changePaymentMethod = (method)=>{
     $rootScope.payment.paymentMethod = method; 
   }
+  
+  $scope.doPayment = (msg)=>{
+    $rootScope.showAlertDialog({}, 'Payment', msg ? msg :`Payment Done!`)
+    $location.url('/')
+
+  }
 })
