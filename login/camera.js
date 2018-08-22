@@ -20,14 +20,6 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
     cameraSensor.getContext("2d").clearRect(0, 0, cameraSensor.width, cameraSensor.height);
   }
   
-  $rootScope.stopStream = (ev)=>{
-    $rootScope.track.stop();
-    $scope.showStopCamera = false;
-    $scope.showTakePicture = false;
-    //video.pause();
-    $rootScope.cameraStream.stop();
-  }
-  
   $scope.openCamera = (ev)=>{
     $rootScope.showDialog(ev,'customer', {}, 'camera.html','Take Picture?')
     .then((answer)=>{
@@ -50,7 +42,6 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
             $rootScope.track = stream.getTracks()[0];
             cameraView.srcObject = stream;
             $rootScope.cameraStream = stream;
-            //video.src = window.URL.createObjectURL(stream);
           })
   }
   
@@ -102,6 +93,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
                  $rootScope.setCookie('timestamp', $rootScope.menudata.timestamp, 15);
                  $rootScope.setCookie('username', $rootScope.menudata.name, 15);
                  $rootScope.signIn = 'Log out';
+                 $rootScope.track.stop();
                  $location.url('/menu');
                })
              })
