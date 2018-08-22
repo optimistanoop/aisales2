@@ -64,6 +64,30 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
       //cameraOutput.classList.add("taken");
     }
     
+    $scope.uploadStream = (ev)=>{
+      
+      return fetch(cameraSensor.toDataURL())
+              .then(res => res.blob())
+              .then(blob => {
+                var formData = new FormData();
+                formData.append('photo', blob)
+                formData.append('emotions', true);
+                formData.append('gender', true);
+                formData.append('age', true);
+                return formData;
+              })
+             .then((formData)=>{
+               return $http({
+                           url: 'https://api.findface.pro/v1/detect/',
+                           headers: {"Content-Type": undefined, 'Authorization':'Token uRZ-fq-qFhixQFpr1_Bu8lFp6W7AKhzO' },
+                           data: formData,
+                           method: "POST"
+                       })
+             })
+             .then(console.log)
+             .catch(console.error);
+    }
+    
     if($rootScope.signIn == 'Sign In') {
       $scope.cameraStart().then((data) =>{ $scope.showTakePicture = true}).catch(error => console.error("Oops. Something is broken.", error));
 
