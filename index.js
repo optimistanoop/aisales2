@@ -51,7 +51,7 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
     $rootScope.checkCookie =()=>{
         var user = $rootScope.getCookie("username");
         if (user != "") {
-            alert("Welcome again " + user);
+            $rootScope.showAlertDialog({}, 'Log In', `Welcome  again ${user}`)
             $rootScope.signIn = 'Log out';
             $location.url('/menu');
         } else {
