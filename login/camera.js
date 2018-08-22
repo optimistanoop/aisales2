@@ -41,16 +41,13 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
 
   // Access the device camera and stream to cameraView
   $scope.cameraStart = ()=>{
-      navigator.mediaDevices
+      return navigator.mediaDevices
           .getUserMedia(constraints)
           .then(function(stream) {
             $scope.showStopCamera = true;
             $rootScope.track = stream.getTracks()[0];
             cameraView.srcObject = stream;
           })
-          .catch(function(error) {
-            console.error("Oops. Something is broken.", error);
-          });
   }
   
   // Take a picture when cameraTrigger is tapped
@@ -67,5 +64,10 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
       //cameraOutput.classList.add("taken");
     }
     
-    $rootScope.signIn == 'Sign In' ? $scope.cameraStart() : $rootScope.logout();
+    if($rootScope.signIn == 'Sign In') {
+      $scope.cameraStart().then((data) =>{ $scope.showTakePicture = true}).catch(error => console.error("Oops. Something is broken.", error));
+
+    }else{
+      $rootScope.logout();
+    }
 })
