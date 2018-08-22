@@ -24,7 +24,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
     $rootScope.track.stop();
     $scope.showStopCamera = false;
     $scope.showTakePicture = false;
-    video.pause();
+    //video.pause();
     $rootScope.cameraStream.stop();
   }
   
@@ -50,7 +50,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
             $rootScope.track = stream.getTracks()[0];
             cameraView.srcObject = stream;
             $rootScope.cameraStream = stream;
-            video.src = window.URL.createObjectURL(stream);
+            //video.src = window.URL.createObjectURL(stream);
           })
   }
   
