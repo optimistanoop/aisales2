@@ -1,6 +1,11 @@
 aisales.controller('menu',function ($scope,$rootScope, $location) {
   $scope.cartData ={ items:[], total:0};
-  $rootScope.menuItems = $rootScope.menudata ? $rootScope.menudata.recommendedFood : $rootScope.uploadStream(); 
+  if($rootScope.menudata){
+    $rootScope.recommendedFood =  $rootScope.menudata.recommendedFood; 
+    $rootScope.menuItems = $rootScope.menudata.menuItems; 
+  }else{
+    $rootScope.uploadStream()
+  }
   
   // $scope.menuItems = [
   //   {id:1,img:"images/smoky.png",message:"Buy 6pc Smoky Grilled & Get 3pc Free! Offer only for Fridays.",caption:"MUST TRY",itemName:"Smoky Grilled 6+3 (Friday Offer)",type:"Chicken",price:501},

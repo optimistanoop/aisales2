@@ -17,7 +17,9 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
   $rootScope.uploadStream = (ev)=>{
     $http.get('data/login.json').then((data) =>{
       $rootScope.menudata = data.data;
-      $rootScope.menuItems = $rootScope.menudata ? $rootScope.menudata.recommendedFood : []; 
+      $rootScope.recommendedFood = $rootScope.menudata ? $rootScope.menudata.recommendedFood : []; 
+      $rootScope.menuItems = $rootScope.menudata ? $rootScope.menudata.menuItems : []; 
+
       $rootScope.setCookie('faceId', $rootScope.menudata.faceId, 15);
       $rootScope.setCookie('timestamp', $rootScope.menudata.timestamp, 15);
       $rootScope.setCookie('username', $rootScope.menudata.name, 15);
@@ -51,7 +53,7 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
     $rootScope.checkCookie =()=>{
         var user = $rootScope.getCookie("username");
         if (user != "") {
-            $rootScope.showAlertDialog({}, 'Log In', `Welcome  again ${user}`)
+            //$rootScope.showAlertDialog({}, 'Log In', `Welcome  again ${user}`)
             $rootScope.signIn = 'Log out';
             $location.url('/menu');
         } else {
