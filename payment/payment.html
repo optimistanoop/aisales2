@@ -61,18 +61,18 @@
                            </div>
                         </div>
                         <div>
-                           <div class="_1xB_t">Available balance:<span class="_1pQeq">286.9</span></div>
+                           <div class="_1xB_t">Available balance:<span class="_1pQeq">11</span></div>
                            <div class="_1cj_F _3aR_s">
-                              <div class="A2TkT">Low balance. You need ₹523 more in your account</div>
+                              <div class="A2TkT">Low balance. You need ₹{{cartData.total - 11}} more in your account</div>
                            </div>
                            <form>
                               <div class="_36hHC">
                                  <div class="_3Um38">
-                                    <input class="_381fS _2oZeV" type="text" name="" value="523">
+                                    <input class="_381fS _2oZeV" type="text" name="" value="{{cartData.total}}">
                                     <div class="_2EeI1 _26LFr"></div>
                                     <label class="_1Cvlf _2tL9P"></label>
                                  </div>
-                                 <div class="_2ZJ0s Py6z5">ADD MONEY</div>
+                                 <div class="_2ZJ0s Py6z5">ADD MONEY AND PAY</div>
                               </div>
                            </form>
                         </div>
@@ -87,7 +87,7 @@
                            </div>
                         </div>
                         <div>
-                           <div class="_2ZJ0s _1x75k">Pay ₹809</div>
+                           <div class="_2ZJ0s _1x75k">Pay ₹{{cartData.total}}</div>
                         </div>
                      </div>
                      <div class="_3pjQQ">
@@ -185,7 +185,7 @@
                               </div>
                               <div class="_25G4G">Securely save this card for a faster checkout next time.</div>
                            </div>
-                           <div class="_2ZJ0s m_CzU">Pay ₹484</div>
+                           <div class="_2ZJ0s m_CzU">Pay ₹{{cartData.total}}</div>
                            <div class="qkGQR">Card details will be saved securely, based of the industry standard</div>
                         </div>
                      </div>
@@ -242,7 +242,7 @@
                              </div>
                              <div class="_25G4G">Securely save this card for a faster checkout next time.</div>
                           </div>
-                          <div class="_2ZJ0s m_CzU">Pay ₹484</div>
+                          <div class="_2ZJ0s m_CzU">Pay ₹{{cartData.total}}</div>
                           <div class="qkGQR">Card details will be saved securely, based of the industry standard</div>
                        </div>
                     </div>
@@ -311,7 +311,7 @@
                    <div class="BYmvt">
                       <div class="_1B91Z"><span class="_1dUyo">Other banks</span><span class="sANoA icon-downArrowSmall"></span></div>
                    </div>
-                   <div class="_2ZJ0s DfUCA W6Qo9 ">Pay ₹484</div>
+                   <div class="_2ZJ0s DfUCA W6Qo9 ">Pay ₹{{cartData.total}}</div>
                 </div>
                </div>
                <div ng-if="payment.paymentMethod == 'pay on delivery'" class="_2Jwky">
@@ -322,7 +322,7 @@
                          <div class="_2QlY5">Cash</div>
                          <div class="_2YDf0 _23V-r">Please keep exact change handy to help us serve you better</div>
                       </div>
-                      <div class="_2ZJ0s _2vnDb">Pay ₹484</div>
+                      <div class="_2ZJ0s _2vnDb">Pay ₹{{cartData.total}}</div>
                    </div>
                 </div>
                </div>

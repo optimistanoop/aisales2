@@ -1,5 +1,5 @@
 aisales.controller('menuCtrl',function ($scope,$rootScope, $location) {
-  $scope.cartData ={ items:[], total:0};
+  $rootScope.cartData ={ items:[], total:0};
   if($rootScope.menudata){
     $rootScope.recommendedFood =  $rootScope.menudata.recommendedFood; 
     $rootScope.menuItems = $rootScope.menudata.menuItems; 
@@ -8,8 +8,8 @@ aisales.controller('menuCtrl',function ($scope,$rootScope, $location) {
   }  
   
   $scope.addTocart =(item)=>{
-    $scope.cartData.items.push(item);
-    $scope.cartData.total = $scope.cartData.total + item.price;
+    $rootScope.cartData.items.push(item);
+    $rootScope.cartData.total = $scope.cartData.total + item.price;
   }
   $scope.checkout =(ev)=>{
     $location.url('/payment')
