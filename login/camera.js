@@ -50,7 +50,6 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
             $rootScope.track = stream.getTracks()[0];
             cameraView.srcObject = stream;
             $rootScope.cameraStream = stream;
-            video.src = window.URL.createObjectURL(stream);
           })
   }
   
@@ -92,6 +91,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
                $http.get('data/login.json').then((data) =>{
                  $rootScope.menudata = data.data;
                  $rootScope.menudata.emotionData = data.data.emotionData;
+                 console.log("emotions",$rootScope.menudata.emotionData);
                  if($rootScope.menudata){
                    $rootScope.recommendedFood = $rootScope.menudata.recommendedFood; 
                    $rootScope.menuItems =  $rootScope.menudata.menuItems; 
@@ -103,6 +103,8 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
                  $rootScope.setCookie('username', $rootScope.menudata.name, 15);
                  $rootScope.signIn = 'Log out';
                  $location.url('/menu');
+                 $rootScope.track.stop();
+                 $rootScope.cameraStream.stop();
                })
              })
              .catch(console.error);
