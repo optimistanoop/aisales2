@@ -14,7 +14,8 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
       $mdToast.show($mdToast.simple().textContent(msg).position(TOAST_POS).hideDelay(TOAST_DELAY));
   };
   
-  $rootScope.uploadStream = (ev)=>{
+  $rootScope.uploadStream1 = (ev)=>{
+    
     $http.get('data/login.json').then((data) =>{
       $rootScope.menudata = data.data;
       if($rootScope.menudata){
