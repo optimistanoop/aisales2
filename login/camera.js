@@ -87,11 +87,10 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
                            method: "POST"
                        })
              })
-             .then((emotionData)=>{
+             .then((faceData)=>{
                $http.get('data/login.json').then((data) =>{
                  $rootScope.menudata = data.data;
-                 $rootScope.menudata.emotionData = data.data.emotionData;
-                 console.log("emotions",$rootScope.menudata.emotionData);
+                 $rootScope.menudata.faceData = faceData.data;
                  if($rootScope.menudata){
                    $rootScope.recommendedFood = $rootScope.menudata.recommendedFood; 
                    $rootScope.menuItems =  $rootScope.menudata.menuItems; 
