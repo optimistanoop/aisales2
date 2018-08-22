@@ -49,7 +49,7 @@
                </div>
             </div>
             <div class="_2Zw1I">
-               <div class="_2Jwky">
+               <div ng-if="payment.paymentMethod == 'wallet'" class="_2Jwky">
                   <div>
                      <div class="_3pjQQ">
                         <div>
@@ -119,6 +119,213 @@
                      </div>
                   </div>
                </div>
+               <div ng-if="payment.paymentMethod == 'cards'" class="_2Jwky">
+                  <div>
+                     <div class="_2tcbC">
+                        <div>
+                           <div class="_2CcgZ">
+                              <div class="_3oQ0I">Add New Card</div>
+                              <div class="_1l6N3">
+                                 <div class="_1glEp">We accept</div>
+                                 <div class="_1MmkK">
+                                    <div class="hJmle">
+                                       <div class="">
+                                          <div><img class="_2POR4 Z3TrL" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Visa_lztyeu"></div>
+                                       </div>
+                                    </div>
+                                    <div class="hJmle">
+                                       <div class="">
+                                          <div><img class="_2POR4" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Mastercard_wqoea2"></div>
+                                       </div>
+                                    </div>
+                                    <div class="hJmle">
+                                       <div class="">
+                                          <div><img class="_2POR4" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Amex_ozga1w"></div>
+                                       </div>
+                                    </div>
+                                    <div class="hJmle">
+                                       <div class="">
+                                          <div><img class="_2POR4 Z3TrL" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Zeta_zybqrc"></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="W_wnE">
+                              <div class="_1iCrU">
+                                 <div class="_3Um38 _3bK7r undefined">
+                                    <input class="_381fS" type="text" name="cardNumber" id="cardNumber" autocomplete="off" value="">
+                                    <div class="_2EeI1"></div>
+                                    <label class="_1Cvlf" for="cardNumber">Card number</label>
+                                 </div>
+                              </div>
+                              <div class="_1iCrU _1zBWQ">
+                                 <div class="_3Um38 _3bK7r _1TftM">
+                                    <input class="_381fS" type="text" name="expiry" id="expiry" autocomplete="off" value="">
+                                    <div class="_2EeI1"></div>
+                                    <label class="_1Cvlf" for="expiry">Valid through(MM/YY)</label>
+                                 </div>
+                                 <div class="_3Um38 _3bK7r _3tnke">
+                                    <input class="_381fS _1L6u2" type="text" name="cvv" id="cvv" autocomplete="off" value="">
+                                    <div class="_2EeI1"></div>
+                                    <label class="_1Cvlf" for="cvv">CVV</label>
+                                 </div>
+                              </div>
+                              <div class="_1iCrU">
+                                 <div class="_3Um38 _3bK7r undefined">
+                                    <input class="_381fS" type="text" name="name" id="name" autocomplete="off" value="">
+                                    <div class="_2EeI1"></div>
+                                    <label class="_1Cvlf" for="name">Name on card</label>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="_1XCQN">
+                              <div class="C2lmo _3za0v">
+                                 <div class="_2C3aj R_dg9 _1eJQw"><span class="_1ZSwS icon-tickRound"></span></div>
+                              </div>
+                              <div class="_25G4G">Securely save this card for a faster checkout next time.</div>
+                           </div>
+                           <div class="_2ZJ0s m_CzU">Pay ₹484</div>
+                           <div class="qkGQR">Card details will be saved securely, based of the industry standard</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div ng-if="payment.paymentMethod == 'food cards'" class="_2Jwky">
+                 <div>
+                    <div class="_2tcbC">
+                       <div>
+                          <div class="_2CcgZ">
+                             <div class="_3oQ0I">Add New Food Card</div>
+                             <div class="_1l6N3">
+                                <div class="_1glEp">We accept</div>
+                                <div class="_1MmkK">
+                                   <div class="hJmle">
+                                      <div class="">
+                                         <div><img class="_2POR4" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Sodexo_tfxihv"></div>
+                                      </div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="W_wnE">
+                             <div class="_1iCrU">
+                                <div class="_3Um38 _3bK7r undefined">
+                                   <input class="_381fS" type="text" name="cardNumber" id="cardNumber" autocomplete="off" value="">
+                                   <div class="_2EeI1"></div>
+                                   <label class="_1Cvlf" for="cardNumber">Card number</label>
+                                </div>
+                             </div>
+                             <div class="_1iCrU _1zBWQ">
+                                <div class="_3Um38 _3bK7r _1TftM">
+                                   <input class="_381fS" type="text" name="expiry" id="expiry" autocomplete="off" value="">
+                                   <div class="_2EeI1"></div>
+                                   <label class="_1Cvlf" for="expiry">Valid through(MM/YY)</label>
+                                </div>
+                                <div class="_3Um38 _3bK7r _3tnke">
+                                   <input class="_381fS _1L6u2" type="text" name="cvv" id="cvv" autocomplete="off" value="">
+                                   <div class="_2EeI1"></div>
+                                   <label class="_1Cvlf" for="cvv">CVV</label>
+                                </div>
+                             </div>
+                             <div class="_1iCrU">
+                                <div class="_3Um38 _3bK7r undefined">
+                                   <input class="_381fS" type="text" name="name" id="name" autocomplete="off" value="">
+                                   <div class="_2EeI1"></div>
+                                   <label class="_1Cvlf" for="name">Name on card</label>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="_1XCQN">
+                             <div class="C2lmo _3za0v">
+                                <div class="_2C3aj R_dg9 _1eJQw"><span class="_1ZSwS icon-tickRound"></span></div>
+                             </div>
+                             <div class="_25G4G">Securely save this card for a faster checkout next time.</div>
+                          </div>
+                          <div class="_2ZJ0s m_CzU">Pay ₹484</div>
+                          <div class="qkGQR">Card details will be saved securely, based of the industry standard</div>
+                       </div>
+                    </div>
+                 </div>
+               <div ng-if="payment.paymentMethod == 'netbanking'" class="_2Jwky">
+                <div>
+                   <div></div>
+                   <div class="_2QpHf">
+                      <div class="_2fVWe DU7g9">
+                         <div>
+                            <div class="_1iVEX">
+                               <div><img class="_1EgVw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/hdfc_edwzub"></div>
+                            </div>
+                         </div>
+                         <div class="_1z37u BAfAE">HDFC</div>
+                         <div class="C2lmo _3za0v">
+                            <div class="_2C3aj"><span class="_1ZSwS icon-tickRound"></span></div>
+                         </div>
+                      </div>
+                      <div class="_2fVWe DU7g9">
+                         <div>
+                            <div class="_1iVEX">
+                               <div><img class="_1EgVw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/sbi_ts3ab8"></div>
+                            </div>
+                         </div>
+                         <div class="_1z37u BAfAE">SBI</div>
+                         <div class="C2lmo _3za0v">
+                            <div class="_2C3aj"><span class="_1ZSwS icon-tickRound"></span></div>
+                         </div>
+                      </div>
+                      <div class="_2fVWe DU7g9">
+                         <div>
+                            <div class="_1iVEX">
+                               <div><img class="_1EgVw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/icici_hckjq4"></div>
+                            </div>
+                         </div>
+                         <div class="_1z37u BAfAE">ICICI</div>
+                         <div class="C2lmo _3za0v">
+                            <div class="_2C3aj"><span class="_1ZSwS icon-tickRound"></span></div>
+                         </div>
+                      </div>
+                      <div class="_2fVWe DU7g9">
+                         <div>
+                            <div class="_1iVEX">
+                               <div><img class="_1EgVw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/axis_i472hk"></div>
+                            </div>
+                         </div>
+                         <div class="_1z37u BAfAE">Axis</div>
+                         <div class="C2lmo _3za0v">
+                            <div class="_2C3aj"><span class="_1ZSwS icon-tickRound"></span></div>
+                         </div>
+                      </div>
+                      <div class="_2fVWe DU7g9">
+                         <div>
+                            <div class="_1iVEX">
+                               <div><img class="_1EgVw" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/kotak_gjlw24"></div>
+                            </div>
+                         </div>
+                         <div class="_1z37u BAfAE">Kotak</div>
+                         <div class="C2lmo _3za0v">
+                            <div class="_2C3aj"><span class="_1ZSwS icon-tickRound"></span></div>
+                         </div>
+                      </div>
+                   </div>
+                   <div class="BYmvt">
+                      <div class="_1B91Z"><span class="_1dUyo">Other banks</span><span class="sANoA icon-downArrowSmall"></span></div>
+                   </div>
+                   <div class="_2ZJ0s DfUCA W6Qo9 ">Pay ₹484</div>
+                </div>
+               <div ng-if="payment.paymentMethod == 'pay on delivery'"class="_2Jwky">
+                <div>
+                   <div class="_2_G0K">
+                      <div class="_1ISkC"><img class="_2tuBw _12_oN" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_140,h_80/image-pay-by-cash_av6bcw" width="140" height="80" alt=""></div>
+                      <div class="_2gp3l _1fMbb">
+                         <div class="_2QlY5">Cash</div>
+                         <div class="_2YDf0 _23V-r">Please keep exact change handy to help us serve you better</div>
+                      </div>
+                      <div class="_2ZJ0s _2vnDb">Pay ₹484</div>
+                   </div>
+                </div>
+             </div>
+             </div>
+              </div>
             </div>
          </div>
       </div>
