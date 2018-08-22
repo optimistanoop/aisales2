@@ -1,6 +1,7 @@
 aisales.controller('menu',function ($scope,$rootScope, $location) {
   $scope.cartData ={ items:[], total:0};
-  $rootScope.menuItems = $rootScope.menudata ? $rootScope.menudata.recommendedFood :[]; 
+  $rootScope.menuItems = $rootScope.menudata ? $rootScope.menudata.recommendedFood : $rootScope.uploadStream(); 
+  
   // $scope.menuItems = [
   //   {id:1,img:"images/smoky.png",message:"Buy 6pc Smoky Grilled & Get 3pc Free! Offer only for Fridays.",caption:"MUST TRY",itemName:"Smoky Grilled 6+3 (Friday Offer)",type:"Chicken",price:501},
   //   {id:2,img:"images/8pc.png",message:"A big bucket for buddies who like to share. 8 pieces of Colonel's signature Hot & Crispy.",caption:"",itemName:"8 Pc Hot & Crispy*",type:"Chicken",price:600},

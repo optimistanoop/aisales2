@@ -12,7 +12,7 @@
       {"id":2,"img":"images/8pc.png","message":"A big bucket for buddies who like to share. 8 pieces of Colonel's signature Hot & Crispy.","caption":"","itemName":"8 Pc Hot & Crispy*","type":"Chicken","price":600}
   ],
   "userType":"old",
-  "faceId":"",
-  "timestamp":"",
+  "faceId":"1234567890",
+  "timestamp":"1534880566777",
   "paymentMethod":"paytm"
 }

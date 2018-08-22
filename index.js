@@ -1,12 +1,67 @@
 
 let aisales = angular.module('aisales', ['ngRoute', 'ngMaterial', 'ngMessages']);
-aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog, TOAST_DELAY, TOAST_POS) {
+aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDialog, $rootScope, $http, $location, TOAST_DELAY, TOAST_POS) {
 
-  
+  $rootScope.signIn = 'Sign In';
+  $rootScope.logout = ()=>{
+    $rootScope.setCookie('faceId', '', 0);
+    $rootScope.setCookie('timestamp', '', 0);
+    $rootScope.setCookie('username', '', 0);
+    $rootScope.signIn = 'Sign In';
+    $location.url('/');
+  }
   $rootScope.showToast = (msg)=>{
       $mdToast.show($mdToast.simple().textContent(msg).position(TOAST_POS).hideDelay(TOAST_DELAY));
   };
+  
+  $rootScope.uploadStream = (ev)=>{
+    $http.get('data/login.json').then((data) =>{
+      $rootScope.menudata = data.data;
+      $rootScope.menuItems = $rootScope.menudata ? $rootScope.menudata.recommendedFood : []; 
+      $rootScope.setCookie('faceId', $rootScope.menudata.faceId, 15);
+      $rootScope.setCookie('timestamp', $rootScope.menudata.timestamp, 15);
+      $rootScope.setCookie('username', $rootScope.menudata.name, 15);
+      $rootScope.signIn = 'Log out';
+      $location.url('/menu');
+    })
+  }
+  
+   $rootScope.setCookie = (cname, cvalue, exdays)=>{
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
 
+     $rootScope.getCookie = (cname)=>{
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    $rootScope.checkCookie =()=>{
+        var user = $rootScope.getCookie("username");
+        if (user != "") {
+            alert("Welcome again " + user);
+            $rootScope.signIn = 'Log out';
+            $location.url('/menu');
+        } else {
+            // user = prompt("Please enter your name:", "");
+            // if (user != "" && user != null) {
+            //     setCookie("username", user, 365);
+            // }
+        }
+    }
+    
   $rootScope.showAlertDialog = (ev, title, msg)=>{
       $mdDialog.show(
           $mdDialog.alert()
@@ -63,6 +118,9 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
 
       return p;
   };
+  
+  $rootScope.checkCookie();
+  
 
 })
 .constant('TOAST_DELAY', 3000)

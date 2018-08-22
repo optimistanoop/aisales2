@@ -19,13 +19,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
   $rootScope.cancelStream = (ev)=>{
     cameraSensor.getContext("2d").clearRect(0, 0, cameraSensor.width, cameraSensor.height);
   }
-  $rootScope.uploadStream = (ev)=>{
-    $http.get('data/login.json').then((data) =>{
-      console.log(data.data)
-      $rootScope.menudata = data.data;
-      $location.url('/menu');
-    })
-  }
+  
   $rootScope.stopStream = (ev)=>{
     $rootScope.track.stop();
     $scope.showStopCamera = false;
@@ -46,8 +40,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
   var constraints = { video: { facingMode: "user" }, audio: false };
 
   // Access the device camera and stream to cameraView
-  function cameraStart() {
-    console.log('starting cam');
+  $scope.cameraStart = ()=>{
       navigator.mediaDevices
           .getUserMedia(constraints)
           .then(function(stream) {
@@ -74,5 +67,5 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
       //cameraOutput.classList.add("taken");
     }
     
-    cameraStart();
+    $rootScope.signIn == 'Sign In' ? $scope.cameraStart() : $rootScope.logout();
 })
