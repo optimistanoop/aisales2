@@ -8,10 +8,9 @@
          </div>
       </div>
       <div class="_2zPJt">
-         <div class="_1IPhI">Change</div>
-         <div class="_2kejs">New Home</div>
-         <div class="_1QRRt">#204, Third Floor 301, 9th Cross Rd, Rachenahalli, Thanisandra, Bengaluru, Karnataka 560077, India</div>
-         <div class="_1__JV">31 MINS</div>
+         <div class="_2kejs">{{payment.addressType}}</div>
+         <div class="_1QRRt">{{payment.address}}</div>
+         <div class="_1__JV">{{payment.timeToDeliver}}</div>
       </div>
       <div class="_250uQ"></div>
       <div class="_2b4pY"><span class="_1q8J4 icon-marker-checkout"></span></div>
@@ -27,24 +26,24 @@
          <div class="_2gmRl">
             <div class="_2YnKK">
                <div class="mqkMo">
-                  <div class="_3zAnR _1o1_e">
+                  <div class="_3zAnR"  ng-class="{_1o1_e: payment.paymentMethod == 'wallet'}">
                      <div class="_2CoZb icon-wallet-filled _3O9Zy"></div>
                      <div class="_29prC _1LWfN">Wallet</div>
                   </div>
-                  <div class="_3zAnR">
-                     <div class="_2CoZb icon-saved-card"></div>
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'cards'}">
+                     <div class="_2CoZb icon-saved-card" ></div>
                      <div class="_29prC">Cards</div>
                   </div>
-                  <div class="_3zAnR">
-                     <div class="_2CoZb icon-saved-card"></div>
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'food cards'}">
+                     <div class="_2CoZb icon-saved-card" ></div>
                      <div class="_29prC">Food Cards</div>
                   </div>
-                  <div class="_3zAnR">
-                     <div class="_2CoZb icon-netbanking"></div>
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'netbanking'}">
+                     <div class="_2CoZb icon-netbanking" ></div>
                      <div class="_29prC">Netbanking</div>
                   </div>
-                  <div class="_3zAnR">
-                     <div class="_2CoZb icon-paybycash"></div>
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'pay on delivery'}">
+                     <div class="_2CoZb icon-paybycash" ></div>
                      <div class="_29prC">Pay on Delivery</div>
                   </div>
                </div>

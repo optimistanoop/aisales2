@@ -30,5 +30,10 @@
   "userType":"old",
   "faceId":"1234567890",
   "timestamp":"1534880566777",
-  "paymentMethod":"paytm"
+  "payment":{
+    "paymentMethod":"wallet", 
+    "addressType":"Home",
+    "address":"#204, Third Floor 301, 9th Cross Rd, Rachenahalli, Thanisandra, Bengaluru, Karnataka 560077, India",
+    "timeToDeliver":"39 Mins"
+  }
 }
