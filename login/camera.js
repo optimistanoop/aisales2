@@ -64,7 +64,7 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
       //cameraOutput.classList.add("taken");
     }
     
-    $scope.uploadStream = (ev)=>{
+    $rootScope.uploadStream = (ev)=>{
       
       return fetch(cameraSensor.toDataURL())
               .then(res => res.blob())
@@ -84,13 +84,28 @@ aisales.controller('cameraCtrl', function($rootScope, $scope, $mdToast, $mdDialo
                            method: "POST"
                        })
              })
-             .then(console.log)
+             .then((emotionData)=>{
+               $http.get('data/login.json').then((data) =>{
+                 $rootScope.menudata = data.data;
+                 $rootScope.menudata.emotionData = data.data.emotionData;
+                 if($rootScope.menudata){
+                   $rootScope.recommendedFood = $rootScope.menudata.recommendedFood; 
+                   $rootScope.menuItems =  $rootScope.menudata.menuItems; 
+                   $rootScope.payment = $rootScope.menudata.payment; 
+                 }
+                 
+                 $rootScope.setCookie('faceId', $rootScope.menudata.faceId, 15);
+                 $rootScope.setCookie('timestamp', $rootScope.menudata.timestamp, 15);
+                 $rootScope.setCookie('username', $rootScope.menudata.name, 15);
+                 $rootScope.signIn = 'Log out';
+                 $location.url('/menu');
+               })
+             })
              .catch(console.error);
     }
     
     if($rootScope.signIn == 'Sign In') {
       $scope.cameraStart().then((data) =>{ $scope.showTakePicture = true}).catch(error => console.error("Oops. Something is broken.", error));
-
     }else{
       $rootScope.logout();
     }

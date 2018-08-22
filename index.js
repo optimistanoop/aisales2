@@ -15,6 +15,7 @@ aisales.controller('aisalesCtrl', function($rootScope, $scope, $mdToast, $mdDial
   };
   
   $rootScope.uploadStream1 = (ev)=>{
+    
     $http.get('data/login.json').then((data) =>{
       $rootScope.menudata = data.data;
       if($rootScope.menudata){
