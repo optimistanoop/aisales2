@@ -10,7 +10,7 @@ aisales.controller('paymentCtrl',function ($scope,$rootScope, $location) {
   }
   
   $scope.doPayment = (msg)=>{
-    $rootScope.showAlertDialog({}, 'Payment', msg ? msg :`Payment Done!`)
+    $rootScope.showAlertDialog({}, 'Payment', msg ? msg :`Payment Done! Please wait for food to deliver.`)
     $location.url('/')
 
   }
