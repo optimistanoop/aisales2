@@ -169,8 +169,11 @@ aisales.config(function($mdThemingProvider, $mdDateLocaleProvider,$routeProvider
       .when("/menu", {
           templateUrl : 'menu/menu.html'
       })
-      .when("/cart", {
-          templateUrl : 'cart/cart.html'
+      .when("/payment", {
+          templateUrl : 'payment/payment.html'
+      })
+      .otherwise({
+        redirect: '/'
       });
       $locationProvider.hashPrefix('!');
       $locationProvider.html5Mode({enabled: false, requireBase: false});
