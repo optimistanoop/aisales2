@@ -26,23 +26,23 @@
          <div class="_2gmRl">
             <div class="_2YnKK">
                <div class="mqkMo">
-                  <div class="_3zAnR"  ng-class="{_1o1_e: payment.paymentMethod == 'wallet'}">
+                  <div class="_3zAnR"  ng-class="{_1o1_e: payment.paymentMethod == 'wallet'}" ng-click="changePaymentMethod('wallet')">
                      <div class="_2CoZb icon-wallet-filled _3O9Zy"></div>
                      <div class="_29prC _1LWfN">Wallet</div>
                   </div>
-                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'cards'}">
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'cards'}" ng-click="changePaymentMethod('cards')">
                      <div class="_2CoZb icon-saved-card" ></div>
                      <div class="_29prC">Cards</div>
                   </div>
-                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'food cards'}">
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'food cards'}" ng-click="changePaymentMethod('food cards')">
                      <div class="_2CoZb icon-saved-card" ></div>
                      <div class="_29prC">Food Cards</div>
                   </div>
-                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'netbanking'}">
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'netbanking'}" ng-click="changePaymentMethod('netbanking')">
                      <div class="_2CoZb icon-netbanking" ></div>
                      <div class="_29prC">Netbanking</div>
                   </div>
-                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'pay on delivery'}">
+                  <div class="_3zAnR" ng-class="{_1o1_e: payment.paymentMethod == 'pay on delivery'}" ng-click="changePaymentMethod('pay on delivery')">
                      <div class="_2CoZb icon-paybycash" ></div>
                      <div class="_29prC">Pay on Delivery</div>
                   </div>
@@ -247,6 +247,7 @@
                        </div>
                     </div>
                  </div>
+               </div>
                <div ng-if="payment.paymentMethod == 'netbanking'" class="_2Jwky">
                 <div>
                    <div></div>
@@ -312,7 +313,8 @@
                    </div>
                    <div class="_2ZJ0s DfUCA W6Qo9 ">Pay ₹484</div>
                 </div>
-               <div ng-if="payment.paymentMethod == 'pay on delivery'"class="_2Jwky">
+               </div>
+               <div ng-if="payment.paymentMethod == 'pay on delivery'" class="_2Jwky">
                 <div>
                    <div class="_2_G0K">
                       <div class="_1ISkC"><img class="_2tuBw _12_oN" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_140,h_80/image-pay-by-cash_av6bcw" width="140" height="80" alt=""></div>
@@ -323,10 +325,8 @@
                       <div class="_2ZJ0s _2vnDb">Pay ₹484</div>
                    </div>
                 </div>
-             </div>
-             </div>
-              </div>
-            </div>
+               </div>
+          </div>
          </div>
       </div>
       <div class="_2b4pY"><span class="_1q8J4 icon-wallet-checkout"></span></div>

@@ -4,4 +4,8 @@ aisales.controller('paymentCtrl',function ($scope,$rootScope, $location) {
   }else{
     $rootScope.uploadStream()
   }  
+  
+  $scope.changePaymentMethod = (method)=>{
+    $rootScope.payment.paymentMethod = method; 
+  }
 })
